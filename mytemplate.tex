@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  %\setromanfont{Georgia}
+  %\setsansfont{Arial}
+  %\setmonofont{Bitstream Vera Sans Mono}
+  %\setmonofont{Monaco}
+  %\setmonofont[Scale=.50]{Courier}
+  %\setmonofont{Courier New}
+\else
+  \usepackage[mathletters]{ucs}
+  \usepackage[utf8x]{inputenc}
+\fi
+%\usepackage{savetrees}
+\usepackage{fullpage}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\addtolength{\headheight}{\baselineskip}
+\pagenumbering{arabic}
+\lhead{\itshape $title$}
+%\chead{}
+%\rhead{\itshape{\nouppercase{\leftmark}}}
+\rhead{\itshape $author$}
+%\lfoot{v $version$}
+\cfoot{\thepage}
+%\rfoot{}
+\usepackage{listings}
+\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\usepackage{fancyvrb}
+\usepackage{enumerate}
+\usepackage{array}
+% This is needed because raggedright in table elements redefines \\:
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\let\PBS=\PreserveBackslash
+\usepackage[normalem]{ulem}
+\newcommand{\textsubscr}[1]{\ensuremath{_{\scriptsize\textrm{#1}}}}
+\usepackage[breaklinks=true,linktocpage,pdftitle={$title$},pdfauthor={$for(author)$$author$$sep$; $endfor$},xetex,colorlinks]{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+$if(numbersections)$
+$else$
+\setcounter{secnumdepth}{0}
+$endif$
+\VerbatimFootnotes % allows verbatim text in footnotes
+$for(header-includes)$
+$header-includes$
+$endfor$
+
+$if(title)$
+\title{$title$}
+$endif$
+\author{$for(author)$$author$$sep$\\$endfor$}
+$if(date)$
+\date{$date$}
+$endif$
+
+\begin{document}
+$if(title)$
+\maketitle
+$if(toc)$
+\listoffigures
+\tableofcontents
+\newpage
+$endif$
+$endif$
+
+$body$
+
+\end{document}
