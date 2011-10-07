@@ -18,10 +18,10 @@
 %\usepackage{savetrees}
 \usepackage{fullpage}
 \usepackage{microtype}
+$if(header)$
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \addtolength{\headheight}{\baselineskip}
-\pagenumbering{arabic}
 \lhead{\itshape $title$}
 %\chead{}
 %\rhead{\itshape{\nouppercase{\leftmark}}}
@@ -29,6 +29,8 @@
 %\lfoot{v $version$}
 \cfoot{\thepage}
 %\rfoot{}
+\pagenumbering{arabic}
+$endif$
 \usepackage{listings}
 \lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
 \setlength{\parindent}{0pt}
