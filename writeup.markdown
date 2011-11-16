@@ -9,5 +9,5 @@
 
 
 <!--
-vim: filetype=markdown ts=4 sw=4 expandtab autoindent
+vim: filetype=markdown ts=4 sw=4 expandtab autoindent tw=80
 -->
