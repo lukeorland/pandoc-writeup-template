@@ -8,11 +8,11 @@ TITLE = "title"
 DATE = "year month day"
 
 FLAGS = \
+	--template=mytemplate.tex \
 	--variable fontsize=10pt \
 	--data-dir=$(HOME)/.pandoc/pandoc-templates
 
 FLAGS_UNUSED = \
-	--template=mytemplate.tex \
 	--variable author=$(AUTHOR) \
 	--variable title=$(TITLE) \
 	--variable date=$(DATE) \
