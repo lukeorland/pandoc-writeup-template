@@ -10,13 +10,13 @@ DATE = "year month day"
 FLAGS = \
 	--template=mytemplate.tex \
 	--variable fontsize=10pt \
-	--data-dir=$(HOME)/.pandoc/pandoc-templates
+	--number-sections
 
 FLAGS_UNUSED = \
+	--data-dir=$(HOME)/.pandoc/pandoc-templates \
 	--variable author=$(AUTHOR) \
 	--variable title=$(TITLE) \
 	--variable date=$(DATE) \
-	--number-sections \
 	--bibliography=$(BIBLIOGRAPHY) \
 	--csl=ieee.csl
 
