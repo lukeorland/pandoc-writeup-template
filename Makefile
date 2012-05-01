@@ -3,7 +3,7 @@ DOCUMENT = writeup
 INFILES = $(DOCUMENT).markdown
 OUTFILE = $(DOCUMENT).pdf
 
-AUTHOR = "Luke Orland"
+AUTHOR = "Author Name"
 TITLE = "title"
 DATE = "year month day"
 
